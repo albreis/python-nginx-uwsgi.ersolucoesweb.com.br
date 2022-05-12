@@ -10,3 +10,4 @@ def application(env, start_response):
     templateVars = {"title": "Python + Nginx", "version": version, "page": page, "template_path": template_path}
     page_content = page_template.read().format(**templateVars)
     page_template.close()
+    layout = open('./layouts/default.html', 'r')
