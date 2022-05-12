@@ -8,3 +8,4 @@ def application(env, start_response):
     template_path = './templates/' + page + '.html'
     page_template = open(template_path if exists(template_path) else './templates/404.html', 'r')
     templateVars = {"title": "Python + Nginx", "version": version, "page": page, "template_path": template_path}
+    page_content = page_template.read().format(**templateVars)
