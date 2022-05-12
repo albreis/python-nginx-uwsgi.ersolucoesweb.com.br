@@ -14,3 +14,4 @@ def application(env, start_response):
     layoutVars = {"title": "title", "page_content": page_content}
     body = layout.read().format(**layoutVars)
     layout.close()
+    return [body.encode("utf-8")]
