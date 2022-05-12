@@ -12,3 +12,4 @@ def application(env, start_response):
     page_template.close()
     layout = open('./layouts/default.html', 'r')
     layoutVars = {"title": "title", "page_content": page_content}
+    body = layout.read().format(**layoutVars)
